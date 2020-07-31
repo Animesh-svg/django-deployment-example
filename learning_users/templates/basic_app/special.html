@@ -1,0 +1,23 @@
+{% extends 'basic_app/base.html' %}
+{% block body_block %}
+
+  <div class="jumbotron">
+    <h1>Your Profile</h1>
+    {% if user.is_authenticated %}
+
+    <!--    <ul>
+          <li>User Info:</li><br> -->
+
+            <label>Profile Picture: </label><br>
+            <img class="img-thumbnail" src="{{ user.userprofileinfo.profile_pic.url }}" height="240px" width="240px"><br><br>
+            <p>Username: <strong>{{ user }}</strong></p><br>
+            <p>Email: <strong>{{ user.email }}</strong></p><br>
+            <p>portfolio_site: <strong>{{ user.userprofileinfo.portfolio_site }}</strong></p><br>
+
+
+    <!--    </ul> -->
+
+    {% endif %}
+  </div>
+
+{% endblock %}
